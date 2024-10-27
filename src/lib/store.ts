@@ -21,7 +21,7 @@ export const biling = {
 	addPayer: () => {
 		billingState.update((payers) => [
 			...payers,
-			{ name: "", bills: [{ product: "Item 1", price: 0 }] }
+			{ name: "", bills: [{ product: "Item 1", price: null }] }
 		])
 	},
 	removePayer: (index: number) => {
@@ -36,7 +36,7 @@ export const biling = {
 		billingState.update((payers) => {
 			const len = payers[index].bills.length
 			const newPayers = [...payers]
-			newPayers[index].bills.push({ product: `Item ${len + 1}`, price: 0 })
+			newPayers[index].bills.push({ product: `Item ${len + 1}`, price: null })
 			return newPayers
 		})
 	},
