@@ -21,13 +21,15 @@
 </svelte:head>
 <Toaster />
 <Header />
-<main class="container mx-auto min-h-[calc(100vh-8rem)] max-w-[60rem]">
-	{@render children()}
-</main>
+<div id="content">
+	<main class="container mx-auto min-h-[calc(100vh-8rem)] max-w-[60rem]">
+		{@render children()}
+	</main>
+</div>
 <Footer />
 
 <style>
-	main {
+	#content {
 		background-image: radial-gradient(#ddd 1px, transparent 1px),
 			radial-gradient(#ddd 1px, transparent 1px);
 		background-position:
