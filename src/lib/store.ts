@@ -12,9 +12,7 @@ export interface BillingSchema {
 	bills: ItemSchema[]
 }
 
-const billingState: Writable<BillingSchema[]> = writable([
-	{ name: "", bills: [{ product: "", price: 0 }] }
-])
+const billingState: Writable<BillingSchema[]> = writable([])
 
 export const biling = {
 	subscribe: billingState.subscribe,

@@ -101,7 +101,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="w-full px-5">
+	<section class="w-full md:px-5">
 		<Receipt {discount} {services} />
 	</section>
 </div>
