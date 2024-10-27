@@ -12,8 +12,8 @@
 	import Receipt from "@component/Receipt"
 	import { biling } from "$lib/store"
 
-	let discount: number | undefined = $state(0)
-	let services: number | undefined = $state(0)
+	let discount: number | undefined = $state()
+	let services: number | undefined = $state()
 </script>
 
 <div
@@ -50,9 +50,10 @@
 										bind:value={$biling[i].bills[billIndex].product}
 									/>
 									<Input
+										startAdornment="Rp."
 										type="number"
 										id="price"
-										placeholder="Rp. 69000"
+										placeholder="Price"
 										bind:value={$biling[i].bills[billIndex].price}
 									/>
 								</div>
@@ -93,11 +94,23 @@
 		<div class="flex w-full max-w-sm flex-col gap-1.5 space-y-2">
 			<div class="flex items-center gap-3">
 				<MdiDiscount class="h-8 w-8" />
-				<Input type="number" id="discount" placeholder="Rp. -25000" bind:value={discount} />
+				<Input
+					type="number"
+					startAdornment="Rp."
+					id="discount"
+					placeholder="Discount"
+					bind:value={discount}
+				/>
 			</div>
 			<div class="flex items-center gap-3">
 				<MdiDeliveryDining class="h-8 w-8" />
-				<Input type="number" id="services" placeholder="Services Fee" bind:value={services} />
+				<Input
+					type="number"
+					startAdornment="Rp."
+					id="services"
+					placeholder="Services Fee"
+					bind:value={services}
+				/>
 			</div>
 		</div>
 	</section>
