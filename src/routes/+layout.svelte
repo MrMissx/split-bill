@@ -11,12 +11,11 @@
 	<title>SplitBill</title>
 	<meta
 		name="description"
-		content="SplitBill is a simple web app to split bills with your friends"
+		content="SplitBill is a simple web app to split bills fairly to your friends"
 	/>
 	<meta name="keywords" content="split, bill, splitbill, friends, share, money" />
 	<meta name="author" content="mrmiss" />
 	<meta name="theme-color" content="#fff" />
-	<link rel="icon" type="image/png" href="/favicon.png" />
 
 	<link rel="canonical" href="https://splitbill.mrmiss.dev" />
 </svelte:head>

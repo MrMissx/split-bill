@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -73,6 +75,7 @@
 		@apply border-border;
 	}
 	body {
+		font-family: "Plus Jakarta Sans", "Bebas Neue", sans-serif;
 		@apply bg-background text-foreground;
 	}
 }

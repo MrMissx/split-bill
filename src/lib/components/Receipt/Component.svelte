@@ -69,7 +69,7 @@
 	<h1 class="text-center text-2xl font-bold">{title ?? "Receipt"}</h1>
 	<p class="w-full text-center text-muted-foreground">
 		{time.toDateString()}
-		{time.getHours()}:{time.getMinutes()}
+		{String(time.getHours()).padStart(2, "0")}:{String(time.getMinutes()).padStart(2, "0")}
 	</p>
 	<div
 		data-orientation="horizontal"
