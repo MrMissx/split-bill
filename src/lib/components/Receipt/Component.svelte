@@ -66,10 +66,10 @@
 
 <Input class="mb-5" bind:value={title} placeholder="Input bill title" />
 <figure id="receipt" class="overflow-hidden rounded-lg border bg-white p-5 shadow-xl">
-	<h1 class="text-center text-2xl font-bold">{title ?? "Receipt"}</h1>
-	<p class="w-full text-center text-muted-foreground">
-		{time.toDateString()}
+	<h1 class="text-center text-3xl font-bold">{title ?? "Receipt"}</h1>
+	<p class="w-full text-center text-muted-foreground text-sm">
 		{String(time.getHours()).padStart(2, "0")}:{String(time.getMinutes()).padStart(2, "0")}
+		{time.toDateString()}
 	</p>
 	<div
 		data-orientation="horizontal"
@@ -98,21 +98,21 @@
 			</tbody>
 		</table>
 
-		<div class="my-5 flex items-center">
+		<div class="my-3 md:my-5 flex items-center">
 			<hr class="flex-grow border-t-4" />
 			<span class="px-3 text-sm text-zinc-400">Details</span>
 			<hr class="flex-grow border-t-4" />
 		</div>
 
-		<div class="w-full px-5">
+		<div class="w-full px-2 md:px-5">
 			{#each personTotal as people, id}
 				<table class="w-full table-auto border-spacing-y-3">
-					<tbody>
-						<tr class="pb-5 text-lg font-bold">
-							<td class="text-left">{people.name}</td>
+					<tbody class="text-sm">
+						<tr class="pb-5 text-lg font-bold ">
+							<td class="text-left text-ellipsis overflow-hidden max-w-min">{people.name}</td>
 							<td class="text-right">
 								{IdrFormat.format(people.total || 0)}
-							</td><td></td>
+							</td>
 						</tr>
 						<!-- This somehow doesn't reflect the update if was accesed by people object -->
 						<!-- {#each people.bills as bill} -->
@@ -131,15 +131,15 @@
 								></div>
 							</td>
 						</tr>
-						<tr class="text-muted-foreground">
+						<tr class="text-muted-foregroun text-sm">
 							<td class="text-left">Subtotal</td>
 							<td class="text-right">{IdrFormat.format(people.subTotal ?? 0)}</td>
 						</tr>
-						<tr class="text-muted-foreground">
+						<tr class="text-muted-foreground text-sm">
 							<td class="text-left">Service</td>
 							<td class="text-right">{IdrFormat.format(people.service || 0)}</td>
 						</tr>
-						<tr class="text-muted-foreground">
+						<tr class="text-muted-foreground text-sm">
 							<td class="text-left">Discount</td>
 							<td class="text-right text-green-600">{IdrFormat.format(people.discount || 0)}</td>
 						</tr>
