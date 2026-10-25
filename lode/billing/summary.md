@@ -15,6 +15,6 @@ graph TD
 
 Files:
 - [state-store.md](state-store.md) - store shape and mutations
-- [split-calculation.md](split-calculation.md) - formulas
+- [split-calculation.md](split-calculation.md) - `calculateTotals`: allocation, clamping, invariants
 
 Related: [../terminology.md](../terminology.md), [../ui/summary.md](../ui/summary.md).
