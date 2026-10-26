@@ -10,7 +10,7 @@
 - All totals come from `calculateTotals` in `src/lib/billing/calculate.ts`. Never re-derive a total inside a component.
 - Checks: `npm run format`, `npm run lint` (prettier + eslint, see `.svelte` caveat in [plans/roadmap.md](plans/roadmap.md)), `npm run check` (svelte-check), `npm run test` (node --test).
 - Tests: plain `node --test test/*.test.ts`. Node 22+ strips types natively, so a pure module in `src/lib` is testable with zero extra deps. Only pure modules qualify — `$lib/*` aliases resolve through `.svelte-kit/tsconfig.json`, which node ignores.
-- Lockfile: `bun.lockb` present. Use the package manager already in use.
+- Package manager: `bun` only, pinned by `packageManager: "bun@1.4.4"` in `package.json`. The lockfile is the text `bun.lock` (Bun >= 1.2 format) — never regenerate `bun.lockb`. The Cloudflare build runs `bun install --frozen-lockfile`, so any dependency change must ship an updated `bun.lock` in the same commit.
 
 ## Invariants
 - Store always holds an array of payers. A payer always has at least one item (UI disables delete when `bills.length === 1`).
