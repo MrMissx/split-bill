@@ -52,6 +52,7 @@
 									<Input
 										startAdornment="Rp."
 										type="number"
+										min={0}
 										id="price"
 										placeholder="Price"
 										bind:value={$biling[i].bills[billIndex].price}
@@ -97,6 +98,7 @@
 				<Input
 					type="number"
 					startAdornment="Rp."
+					min={0}
 					id="discount"
 					placeholder="Discount"
 					bind:value={discount}
